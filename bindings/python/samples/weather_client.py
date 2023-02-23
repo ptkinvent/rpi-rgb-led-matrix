@@ -6,17 +6,12 @@ import time
 class WeatherClient():
     def __init__(self):
         api_key = os.environ.get('PRIVATE_API_KEY')
-        city = 'berkeley,ca,usa'
-
-        # See `https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition`
-        # to get current position.
-        latitude = '37.8650809'
-        longitude = '-122.2545076'
-
+        latitude = '37.48311'
+        longitude = '-122.22846'
         forecast_num_days = 7
 
-        self.current_url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=imperial&appid={api_key}'
-        self.forecast_url = f'https://api.openweathermap.org/data/2.5/forecast/daily?q={city}&units=imperial&cnt={forecast_num_days}&appid={api_key}'
+        self.current_url = f'https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&units=imperial&appid={api_key}'
+        self.forecast_url = f'https://api.openweathermap.org/data/2.5/forecast/daily?lat={latitude}&lon={longitude}&units=imperial&cnt={forecast_num_days}&appid={api_key}'
         self.air_pollution_url = f'http://api.openweathermap.org/data/2.5/air_pollution?lat={latitude}&lon={longitude}&appid={api_key}'
 
         self.current_data = {}

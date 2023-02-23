@@ -28,7 +28,7 @@ class TestClient:
 class GraphicsTest(SampleBase):
     def __init__(self, *args, **kwargs):
         super(GraphicsTest, self).__init__(*args, **kwargs)
-        brightness = 0.75 if 9 < datetime.datetime.now().hour < 17 else 0.1
+        brightness = 1
         self.white = graphics.Color(255*brightness, 255*brightness, 255*brightness)
         self.gray = graphics.Color(150*brightness, 150*brightness, 150*brightness)
         self.red = graphics.Color(255*brightness, 0, 0)
